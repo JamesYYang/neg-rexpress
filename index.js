@@ -9,6 +9,7 @@ var methodOverride = require("method-override");
 var compression = require('compression');
 var logger = require("neg-log4node");
 var faq = require('faq');
+var negUtil = require("neg-util");
 
 domainError = function (){
   return function(req, res, next){
@@ -54,6 +55,10 @@ loadMiddleware = function(config){
   app.use(morgan(config.consoleFormat));
   app.use(domainError());
   app.use(compression());
+
+  if(config.beforeLoadRoute && negUtil.is("Function", config.beforeLoadRoute)){
+    config.beforeLoadRoute(app);
+  }
   app.use(faq(config.faqOption));
   loadRoutes(config.routePath, app);
 

@@ -29,6 +29,7 @@
     "faq": "0.0.1",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
-    "neg-log4node": "0.0.3"
+    "neg-log4node": "0.0.3",
+    "neg-util": "0.0.1"
   }
 }

@@ -16,13 +16,25 @@ var faqOption = {
   body: logOption
 }
 
+var before = function(app){
+  app.use(function(req, res, next){
+    if(req.path === "/abc"){
+      res.end("abc");
+    }
+    else{
+      next();
+    }
+  })
+}
+
 var options = {
   logConfig: logOption,
   routePath: routePath,
   port: 8003,
   faqOption: faqOption,
   consoleFormat: "dev",
-  errorTitle: "Test App"
+  errorTitle: "Test App",
+  beforeLoadRoute: before
 };
 
 
