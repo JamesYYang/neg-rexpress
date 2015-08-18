@@ -1,0 +1,33 @@
+{
+  "name": "neg-rexpress",
+  "version": "0.0.1",
+  "description": "help to build rest api base on express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesYYang/neg-rexpress.git"
+  },
+  "keywords": [
+    "rest",
+    "express"
+  ],
+  "author": "James.Y.Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JamesYYang/neg-rexpress/issues"
+  },
+  "homepage": "https://github.com/JamesYYang/neg-rexpress#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "compression": "^1.5.2",
+    "cors": "^2.7.1",
+    "errorhandler": "^1.4.2",
+    "express": "^4.13.3",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1",
+    "neg-log4node": "0.0.3"
+  }
+}
