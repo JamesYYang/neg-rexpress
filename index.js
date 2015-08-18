@@ -8,6 +8,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var compression = require('compression');
 var logger = require("neg-log4node");
+var faq = require('faq');
 
 domainError = function (){
   return function(req, res, next){
@@ -53,7 +54,7 @@ loadMiddleware = function(config){
   app.use(morgan(config.consoleFormat));
   app.use(domainError());
   app.use(compression());
-
+  app.use(faq(config.faqOption));
   loadRoutes(config.routePath, app);
 
   app.use(errorHandler({log: logger.apiError}));

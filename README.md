@@ -26,10 +26,16 @@ var logOption = {
 
 var routePath = __dirname + "/routes";
 
+var faqOption = {
+  uri: "/test-faq",
+  body: logOption
+}
+
 var options = {
   logConfig: logOption,
   routePath: routePath,
   port: 8003,
+  faqOption: faqOption,
   consoleFormat: "dev",
   errorTitle: "Test App"
 };
