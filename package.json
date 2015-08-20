@@ -1,6 +1,6 @@
 {
   "name": "neg-rexpress",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "help to build rest api base on express.",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "faq": "0.0.1",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
-    "neg-log4node": "0.0.3",
+    "neg-log4node": "0.0.4",
     "neg-util": "0.0.1"
   }
 }
