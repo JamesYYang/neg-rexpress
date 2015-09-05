@@ -51,7 +51,7 @@ loadMiddleware = function(config){
   app.use(bodyParser.urlencoded({limit: '10mb', extended: false}));
   app.use(bodyParser.json({limit: '10mb'}));
   app.use(methodOverride());
-  app.use(cors());
+  app.use(cors(config.corsOption));
   app.use(morgan(config.consoleFormat));
   app.use(domainError());
   app.use(compression());

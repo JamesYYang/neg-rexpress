@@ -31,6 +31,10 @@ var faqOption = {
   body: logOption
 }
 
+var corsOption = {
+  exposedHeaders: "x-token"
+}
+
 var options = {
   logConfig: logOption,
   routePath: routePath,

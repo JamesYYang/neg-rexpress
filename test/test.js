@@ -16,6 +16,10 @@ var faqOption = {
   body: logOption
 }
 
+var corsOption = {
+  exposedHeaders: "x-token"
+}
+
 var before = function(app){
   app.use(function(req, res, next){
     if(req.path === "/abc"){
@@ -32,6 +36,7 @@ var options = {
   routePath: routePath,
   port: 8003,
   faqOption: faqOption,
+  corsOption: corsOption,
   consoleFormat: "dev",
   errorTitle: "Test App",
   beforeLoadRoute: before

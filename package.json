@@ -1,6 +1,6 @@
 {
   "name": "neg-rexpress",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "help to build rest api base on express.",
   "main": "index.js",
   "scripts": {
