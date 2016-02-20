@@ -11,24 +11,7 @@ var logger = require("neg-log4node");
 var faq = require('faq');
 var negUtil = require("neg-util");
 
-domainError = function (){
-  return function(req, res, next){
-    var d = domain.create();
-    d.add(req);
-    d.add(res);
-    d.on("error", function(err) {
-      d._throwErrorCount = (d._throwErrorCount || 0) + 1;
-      if (d._throwErrorCount > 1) {
-        return;
-      }
-      res.setHeader("Connection", "close");
-      return next(err);
-    });
-    return d.run(next);
-  }
-}
-
-loadRoutes = function(routePath, app){
+var loadRoutes = function(routePath, app){
   fs.readdirSync(routePath).forEach(function(file) {
     var newPath, stat;
     newPath = routePath + "/" + file;
@@ -41,7 +24,7 @@ loadRoutes = function(routePath, app){
   });
 }
 
-loadMiddleware = function(config){
+var loadMiddleware = function(config){
   logger.configure(config.logConfig);
   if(config.errorTitle){
     errorHandler.title = config.errorTitle;
@@ -53,7 +36,6 @@ loadMiddleware = function(config){
   app.use(methodOverride());
   app.use(cors(config.corsOption));
   app.use(morgan(config.consoleFormat));
-  app.use(domainError());
   app.use(compression());
 
   if(config.beforeLoadRoute && negUtil.is("Function", config.beforeLoadRoute)){
