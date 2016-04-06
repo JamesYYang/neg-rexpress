@@ -1,6 +1,6 @@
 {
   "name": "neg-rexpress",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "help to build rest api base on express.",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,6 @@
     "cors": "^2.7.1",
     "errorhandler": "^1.4.2",
     "express": "^4.13.3",
-    "faq": "0.0.1",
     "method-override": "^2.3.5",
     "morgan": "^1.6.1",
     "request": "^2.69.0"

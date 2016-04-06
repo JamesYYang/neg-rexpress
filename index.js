@@ -1,4 +1,5 @@
-var domain = require("domain");
+'use strict';
+
 var fs = require("fs");
 var express = require('express');
 var cors = require('cors');
@@ -7,8 +8,8 @@ var morgan = require('morgan');
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var compression = require('compression');
-var logger = require("./logger");
-var faq = require('faq');
+var logger = require("./lib/logger");
+var faq = require('./lib/faq');
 
 var loadRoutes = function(routePath, app) {
   fs.readdirSync(routePath).forEach(function(file) {

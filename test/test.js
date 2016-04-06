@@ -3,7 +3,7 @@ var logger = require('../').logger;
 
 var logOption = {
     apiLog: {
-      uri: "http://10.16.75.24:3000/framework/v1/log-entry1",
+      uri: "http://10.16.75.24:3000/framework/v1/log-entry",
       global: "TestGlobal",
       local: "TestLocal",
       category: "Exception"

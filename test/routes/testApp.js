@@ -4,6 +4,8 @@ module.exports = function(app){
   });
 
   app.get("/error", function(req, res, next){
-    next(new Error("Here is error...."));
+    var error = new Error("Here is error....")
+    // error.ignoreApi = true;
+    next(error);
   });
 }
